@@ -37,7 +37,7 @@ export let fleet = [
         model: 'Alliance',
         make: 'Tesla',
         miles: '15600',
-        latlong: '40.87872 -73.8743894'
+        latlong: '40.783661 -73.965883'
     },
     {
         license: 'PQR678',
@@ -45,7 +45,7 @@ export let fleet = [
         model: 'Jetta',
         make: 'Uber',
         miles: '54320',
-        latlong: '40.87872 -73.8743894'
+        latlong: '40.783937 -73.967675'
     },
     {
         license: 'STU910',
@@ -53,7 +53,7 @@ export let fleet = [
         model: 'Victory',
         make: 'Lyft',
         miles: '30567',
-        latlong: '40.87872 -73.8743894'
+        latlong: '40.782792 -73.963662'
     },
     {
         license: 'VXZ123',
@@ -61,6 +61,6 @@ export let fleet = [
         model: 'Fusion',
         make: 'Uber',
         miles: '12987',
-        latlong: '40.87872 -73.8743894'
+        latlong: '40.783239 -73.966902'
     }
 ];

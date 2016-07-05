@@ -40,7 +40,6 @@ export class FleetDataService {
                         if (car) {
                             this.cars.push(car);
                         }
-                        this.cars.push(car);
                     } else {
                         let e = new DataError('invalid car data', data);
                         this.errors.push(e);
@@ -49,7 +48,9 @@ export class FleetDataService {
                 case 'drone':
                     if (this.validateDroneData(data)) {
                         let drone = this.loadDrone(data);
-                        this.drones.push(drone);
+                        if (drone) {
+                            this.drones.push(drone);
+                        }
                     } else {
                         let e = new DataError('invalid drone data', data);
                         this.errors.push(e);
