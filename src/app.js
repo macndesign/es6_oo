@@ -1,12 +1,23 @@
 import $ from 'jquery';
 import {fleet} from './fleet-data.js';
 import {FleetDataService} from './services/fleet-data-service.js';
-import {GoogleMap} from './ui/google-map.js';
+import {ApplicationBase} from './framework/application-base.js';
+import {HomePage} from './home-page.js';
+import {CarsPage} from './cars-page.js';
 
-let dataService = new FleetDataService();
-dataService.loadData(fleet);
+export class App extends ApplicationBase {
+    constructor() {
+        super('Fleet Manager');
+        this.dataService = new FleetDataService();
+        this.dataService.loadData(fleet);
 
-let centerOfMap = {lat: 40.783661, lng: -73.965883};
-let map = new GoogleMap(centerOfMap, dataService.cars);
+        this.addRoute('Home', new HomePage(), true);
+        this.addRoute('Cars', new CarsPage());
+        this.addRoute('Drone', null);
+        this.addRoute('Map', null);
+    }
+}
 
-map.appendToElement($('body'));
+
+export let application = new App();
+application.show($('body'));
